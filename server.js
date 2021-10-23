@@ -15,11 +15,11 @@ connectDB();
 app.use(express.json());
 
 // CORS HANDLER
-app.use((req, res, next) => {
-  res.header("Access-Control-Allow-Origin", "*");
-  // res.header("Access-Control-Allow-Methods", "GET");
-  next();
-});
+// app.use((req, res, next) => {
+//   res.header("Access-Control-Allow-Origin", "*");
+//   // res.header("Access-Control-Allow-Methods", "GET");
+//   next();
+// });
 
 // ROUTES
 app.get("/", (req, res) => {
