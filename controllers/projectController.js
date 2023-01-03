@@ -4,18 +4,6 @@ import asyncHandler from "express-async-handler";
 
 import Project from "./../models/projectModel.js";
 
-const featuredProjects = asyncHandler(async (req, res) => {
-  try {
-    const projects = await Project.find().select(
-      "_id name area city carouselImg"
-    );
-    res.status(200).json(projects);
-  } catch (error) {
-    res.status(404);
-    throw new Error("Unable to fetch projects..");
-  }
-});
-
 const getProjects = asyncHandler(async (req, res) => {
   try {
     const projects = await Project.find();
@@ -38,4 +26,4 @@ const getProjectById = asyncHandler(async (req, res) => {
   }
 });
 
-export { featuredProjects, getProjects, getProjectById };
+export { getProjects, getProjectById };
